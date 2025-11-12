@@ -1,0 +1,174 @@
+/* Passo 2.1: Estilo de Fundo e Corpo (IMAGEM COMPLETA VISÍVEL) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px; 
+    background-color: #000000; 
+    background-image: url('srluizdominusia.jpeg.jpeg'); 
+    background-size: contain; /* CORRIGIDO: Garante que a imagem inteira apareça (proporcionalmente) */
+    background-repeat: no-repeat; /* Evita que a imagem se repita nas áreas vazias */
+    background-position: center; 
+    background-attachment: fixed; 
+    color: #ecf0f1;
+    box-sizing: border-box; 
+}
+
+/* Passo 2.2: Contêiner Principal - TAMANHO PERFEITO E MAIS TRANSPARENTE */
+.chat-container {
+    display: flex;
+    width: 65%; 
+    max-width: 800px; 
+    height: 60vh; 
+    min-height: 400px; 
+    
+    background: rgba(44, 62, 80, 0.55); 
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); 
+    overflow: hidden;
+}
+
+/* Passo 2.3: Barra Lateral (Histórico) - Mais transparente */
+.history-sidebar {
+    width: 25%;
+    padding: 20px;
+    background: rgba(52, 73, 94, 0.65); 
+    border-right: 1px solid rgba(44, 62, 80, 0.4);
+    overflow-y: auto;
+}
+
+.history-sidebar h2 {
+    color: #f39c12; 
+    margin-top: 0;
+    border-bottom: 2px solid #f39c12;
+    padding-bottom: 10px;
+}
+
+#historyList {
+    list-style: none;
+    padding: 0;
+}
+
+#historyList li {
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.2s;
+    font-size: 0.9em;
+}
+
+#historyList li:hover {
+    background-color: rgba(73, 96, 120, 0.7);
+}
+
+#clearHistoryButton {
+    width: 100%;
+    padding: 10px;
+    background-color: #e74c3c; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Passo 2.4: Chat Principal */
+.main-chat {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-chat h1 {
+    text-align: center;
+    padding: 15px;
+    margin: 0;
+    background: rgba(44, 62, 80, 0.6); 
+    color: #3498db; 
+}
+
+.chat-box {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: rgba(44, 62, 80, 0.55); 
+    border-bottom: 1px solid rgba(52, 73, 94, 0.4);
+}
+
+/* Passo 2.5: Estilos de Mensagem - MENSAGEM DO SISTEMA MAIS TRANSPARENTE */
+.message {
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    max-width: 70%;
+    line-height: 1.5;
+    word-wrap: break-word;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.user {
+    background-color: #3498db; 
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 5px;
+}
+
+.system {
+    background-color: rgba(149, 165, 166, 0.7); 
+    color: #2c3e50;
+    margin-right: auto;
+    border-bottom-left-radius: 5px;
+}
+
+/* Passo 2.6: Área de Input - INPUT DE TEXTO MAIS TRANSPARENTE */
+.input-area {
+    display: flex;
+    padding: 15px;
+    background: rgba(52, 73, 94, 0.65); 
+}
+
+#userInput {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #2c3e50;
+    border-radius: 25px;
+    margin-right: 10px;
+    font-size: 1em;
+    background: rgba(236, 240, 241, 0.5); 
+    color: #2c3e50;
+}
+
+.input-area button {
+    padding: 10px 20px;
+    background-color: #f39c12; 
+    color: #2c3e50;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.input-area button:hover {
+    background-color: #e67e22;
+}
+
+/* Passo 2.7: Responsividade */
+@media (max-width: 768px) {
+    .chat-container {
+        flex-direction: column;
+        height: 90vh; 
+        width: 95%;
+        min-height: unset; 
+    }
+    .history-sidebar {
+        width: 100%;
+        height: 80px; 
+        overflow-y: hidden;
+        border-right: none;
+        border-bottom: 1px solid #2c3e50;
+        padding: 1
